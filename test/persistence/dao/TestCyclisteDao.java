@@ -42,7 +42,7 @@ public class TestCyclisteDao extends TestUnitDao {
 		cycliste = cyclisteDao.create(cycliste);
 		assertEquals(nbRow + 1, cyclisteDao.findList().size());
 		assertEquals(cycliste.getName(), cyclisteDao.findById(cycliste.getId()).getName());
-		assertEquals(cycliste.getVelo(), cyclisteDao.findById(cycliste.getVelo));
+		assertEquals(cycliste.getVelo(), cyclisteDao.findById(cycliste.getId()).getVelo());
 		cycliste = null; 
 		Cycliste cyclisteNull = cyclisteDao.create(cycliste);
 		assertNull(cyclisteNull);
