@@ -67,11 +67,12 @@ public class CyclisteDao implements IDAO<Cycliste> {
 			while(resultSet.next()) {
 				long id = resultSet.getLong("id");
 				String name = resultSet.getString("name");
+				String velo = resultSet.getString("velo");
 				int nombre_velos = resultSet.getInt("nombre_velos");
 				long idEquipe = resultSet.getLong("equipe_id");
 				EquipeDao equipeDao = new EquipeDao();
 				Equipe equipe = equipeDao.findById(idEquipe);
-				cycliste = new Cycliste(id,name,nombre_velos,equipe);
+				cycliste = new Cycliste(id,name,nombre_velos,equipe,velo);
 			}
 		}
 		catch (Exception e) {
