@@ -47,8 +47,6 @@ public class Cycliste {
 		this.equipe = equipe;
 	}
 	
-	public Cycliste() {}
-	
 	public Cycliste(long id, String name, int nombreVelos, Equipe equipe, String velo) {
 		super();
 		this.id = id;
@@ -57,5 +55,7 @@ public class Cycliste {
 		this.equipe = equipe;
 		this.velo = velo;
 	}
+	
+	public Cycliste() {}
 	
 }
