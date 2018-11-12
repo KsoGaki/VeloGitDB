@@ -5,7 +5,6 @@ public class Cycliste {
 	private long id;
 	private String name;
 	private int nombreVelos;
-	private String velo;
 	private Equipe equipe;
 	
 	public long getId() {
