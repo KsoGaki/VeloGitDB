@@ -32,12 +32,6 @@ public class Cycliste {
 	public void setEquipe(Equipe equipe) {
 		this.equipe = equipe;
 	}
-	public String getVelo() {
-		return velo;
-	}
-	public void setVelo(String velo) {
-		this.velo = velo;
-	}
 	
 	public Cycliste(long id, String name, int nombreVelos, Equipe equipe) {
 		super();
@@ -46,16 +40,7 @@ public class Cycliste {
 		this.nombreVelos = nombreVelos;
 		this.equipe = equipe;
 	}
-	
-	public Cycliste(long id, String name, int nombreVelos, Equipe equipe, String velo) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.nombreVelos = nombreVelos;
-		this.equipe = equipe;
-		this.velo = velo;
-	}
-	
+
 	public Cycliste() {}
 	
 }

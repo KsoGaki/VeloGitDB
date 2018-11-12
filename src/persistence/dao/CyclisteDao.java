@@ -15,7 +15,7 @@ import persistence.manager.JDBCManager;
 
 public class CyclisteDao implements IDAO<Cycliste> {
 
-	public final static String _INSERT = "INSERT INTO cycliste (`name`, `nombre_velos`, `velo`, `equipe_id`) VALUES(?, ?, ?, ?);";
+	public final static String _INSERT = "INSERT INTO cycliste (`name`, `nombre_velos`, `equipe_id`) VALUES(?, ?, ?);";
 	public final static String _SELECTID = "SELECT * FROM cycliste INNER JOIN equipe on cycliste.equipe_id = equipe.id WHERE cycliste.id=?;";
 	public final static String _SELECT = "SELECT * FROM cycliste INNER JOIN equipe on cycliste.equipe_id = equipe.id;";
 	public final static String _UPDATE = "UPDATE cycliste SET name=?, nombre_velos=?, equipe_id=? WHERE id=?;";
@@ -32,7 +32,6 @@ public class CyclisteDao implements IDAO<Cycliste> {
 			PreparedStatement preparedStatement = connection.prepareStatement(_INSERT, Statement.RETURN_GENERATED_KEYS);
 			preparedStatement.setString(1, pT.getName());
 			preparedStatement.setInt(2, pT.getNombreVelos());
-			preparedStatement.setString(3, pT.getVelo());
 			preparedStatement.setLong(4, pT.getEquipe().getId());
 			preparedStatement.execute();
 			ResultSet resultSet = preparedStatement.getGeneratedKeys();
