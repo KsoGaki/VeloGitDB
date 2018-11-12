@@ -37,11 +37,12 @@ public class TestCyclisteDao extends TestUnitDao {
 
 	public void testCreate() throws DaoException {
 		Equipe equipe = new EquipeDao().findById(2);
-		cycliste = new Cycliste(1, "Tobi", 15, equipe);
+		cycliste = new Cycliste(1, "Tobi", 15, equipe, "Lapierre");
+		
 		cycliste = cyclisteDao.create(cycliste);
 		assertEquals(nbRow + 1, cyclisteDao.findList().size());
 		assertEquals(cycliste.getName(), cyclisteDao.findById(cycliste.getId()).getName());
-
+		assertEquals(cycliste.getVelo(), cyclisteDao.findById(cycliste.getVelo));
 		cycliste = null; 
 		Cycliste cyclisteNull = cyclisteDao.create(cycliste);
 		assertNull(cyclisteNull);
